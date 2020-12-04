@@ -1,0 +1,15 @@
+@import 'app.scss';
+
+.default {
+  display: grid;
+  grid-template-rows: 14rem 1fr;
+  min-height: 100vh;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat($grid-columns, 1fr);
+  grid-column-gap: $grid-gutter-width;
+  margin: 0 auto;
+  @include content-width;
+}

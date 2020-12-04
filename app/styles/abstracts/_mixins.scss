@@ -1,0 +1,32 @@
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+      + 'Please make sure it is defined in `$grid-breakpoints` map.';
+  }
+}
+
+@mixin content-width {
+  max-width: map_get($container-max-widths, xs);
+  padding: 0 1rem;
+
+  @include breakpoint('sm') {
+    max-width: map_get($container-max-widths, sm);
+    padding: 0;
+  }
+
+  @include breakpoint('md') {
+    max-width: map_get($container-max-widths, md);
+  }
+
+  @include breakpoint('lg') {
+    max-width: map_get($container-max-widths, lg);
+  }
+
+  @include breakpoint('xl') {
+    max-width: map_get($container-max-widths, xl);
+  }
+}

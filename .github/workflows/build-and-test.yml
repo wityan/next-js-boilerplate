@@ -1,0 +1,59 @@
+name: Build and Test
+
+on: [pull_request]
+
+jobs:
+  buildAndTest:
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Set timezone to Zurich
+        run: sudo timedatectl set-timezone Europe/Zurich
+
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Run npm install
+        run: npm install
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run Typescript check
+        run: npm run type:check
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Run integration tests
+        uses: cypress-io/github-action@v1
+        with:
+          build: npm run build
+          start: npm run start
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          headless: true
+          spec: test/integration/**/*
+
+      - name: Run e2e tests
+        uses: cypress-io/github-action@v1
+        with:
+          build: npm run build
+          start: npm run start
+          wait-on: 'http://localhost:3000'
+          browser: chrome
+          headless: true
+          spec: test/e2e/**/*

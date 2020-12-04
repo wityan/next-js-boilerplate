@@ -1,0 +1,27 @@
+@import 'app.scss';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.socials {
+  display: flex;
+
+  a {
+    color: $color-black;
+    text-decoration: none;
+    transition: transform 0.2s ease-out;
+
+    &:hover {
+      transition: transform 0.2s ease-in;
+      transform: translateY(-4px);
+    }
+
+    &:not(:last-child) {
+      margin-right: 2.5rem;
+    }
+  }
+}

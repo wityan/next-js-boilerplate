@@ -1,0 +1,25 @@
+@import 'app.scss';
+
+.content {
+  grid-column: span 12;
+
+  @include breakpoint('md') {
+    grid-column: 3 / 11;
+  }
+
+  @include breakpoint('xl') {
+    grid-column: 4 / 10;
+  }
+}
+
+.social {
+  padding: 0 0.5rem;
+  color: $color-black;
+  font-size: 1.8rem;
+  text-decoration: none;
+  letter-spacing: 0.2rem;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
