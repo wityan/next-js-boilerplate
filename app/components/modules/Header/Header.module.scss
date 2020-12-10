@@ -2,9 +2,9 @@
 
 .header {
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .socials {
@@ -16,8 +16,8 @@
     transition: transform 0.2s ease-out;
 
     &:hover {
-      transition: transform 0.2s ease-in;
       transform: translateY(-4px);
+      transition: transform 0.2s ease-in;
     }
 
     &:not(:last-child) {

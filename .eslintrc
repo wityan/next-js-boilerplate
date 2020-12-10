@@ -12,6 +12,9 @@
     "react/react-in-jsx-scope": 0
   },
   "env": {
-    "jest": true
+    "jest": true,
+    "browser": true,
+    "amd": true,
+    "node": true
   }
 }

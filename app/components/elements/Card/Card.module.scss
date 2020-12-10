@@ -25,15 +25,15 @@
 .image {
   top: 0;
   left: 0;
+  overflow: hidden;
   width: 100%;
   height: 28rem;
   object-fit: cover;
-  overflow: hidden;
 }
 
 .content {
-  transform-style: preserve-3d;
   padding: 2rem 4rem 4rem;
+  transform-style: preserve-3d;
 }
 
 .title {

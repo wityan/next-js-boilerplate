@@ -44,9 +44,7 @@
     "lint-staged": "^10.5.0",
     "prettier": "2.1.2",
     "stylelint": "^13.7.2",
-    "stylelint-config-standard": "^20.0.0",
-    "stylelint-declaration-use-variable": "^1.7.2",
-    "stylelint-order": "^4.1.0",
+    "stylelint-config-idiomatic-order": "^8.1.0",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.5"
   },
