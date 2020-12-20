@@ -10,6 +10,7 @@
 }
 
 @mixin content-width {
+  width: 100%;
   max-width: map_get($container-max-widths, xs);
   padding: 0 1rem;
 

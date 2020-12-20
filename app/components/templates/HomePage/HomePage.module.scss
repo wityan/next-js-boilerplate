@@ -2,6 +2,7 @@
 
 .content {
   grid-column: span 12;
+  text-align: center;
 
   @include breakpoint('md') {
     grid-column: 3 / 11;
@@ -12,14 +13,14 @@
   }
 }
 
-.social {
-  padding: 0 0.5rem;
-  color: $color-black;
-  font-size: 1.8rem;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
+.author {
+  font-size: 2.2rem;
+  font-weight: lighter;
+  letter-spacing: .05rem;
+  text-transform: lowercase;
 
-  &:hover {
-    color: $color-primary;
+  a {
+    color: $color-black;
+    font-style: italic;
   }
 }
