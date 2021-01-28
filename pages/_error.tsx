@@ -1,7 +1,9 @@
-import { NextPage } from 'next';
-
-const Error: NextPage<{ statusCode?: number }> = ({ statusCode }) => (
-  <p>{statusCode ? `An error ${statusCode} occurred on server` : 'An error occurred on client'}</p>
+const Error = ({ statusCode }: { statusCode?: number }) => (
+  <p>
+    {statusCode
+      ? `An error ${statusCode} occurred on server`
+      : 'An error occurred on client'}
+  </p>
 );
 
 Error.getInitialProps = ({ res, err }) => {

@@ -28,8 +28,14 @@ type Props = {
   alt?: string;
 };
 
-const Icon: React.FC<Props> = ({ icon, alt }) => (
-  <svg width={20} height={20} viewBox="0 0 24 24" fill="currentColor" focusable="false">
+const Icon = ({ icon, alt }: Props) => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    focusable="false"
+  >
     {alt && <title>{alt}</title>}
     {icons[icon]}
   </svg>
