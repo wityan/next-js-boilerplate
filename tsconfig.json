@@ -10,7 +10,8 @@
       "@constant/*": ["constants/*"],
       "@context/*": ["context/*"],
       "@hook/*": ["hooks/*"],
-      "@util/*": ["utils/*"]
+      "@util/*": ["utils/*"],
+      "@api/*": ["api/*"]
     },
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
